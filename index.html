@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Norex Earn BD</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f4f7fb;
+ color:#172033;
+}
+header{
+ background:#102d22;
+ color:white;
+ padding:20px;
+ text-align:center;
+}
+header h1{margin:0;color:#45e29b}
+header p{margin-bottom:0}
+nav{
+ display:flex;
+ justify-content:center;
+ gap:10px;
+ flex-wrap:wrap;
+ background:#fff;
+ padding:12px;
+}
+button{
+ border:0;
+ padding:12px 18px;
+ border-radius:8px;
+ background:#087f5b;
+ color:white;
+ font-weight:bold;
+ cursor:pointer;
+}
+main{
+ max-width:850px;
+ margin:20px auto;
+ padding:15px;
+}
+.hero{
+ background:linear-gradient(135deg,#064e3b,#10b981);
+ color:white;
+ padding:30px 20px;
+ border-radius:16px;
+ text-align:center;
+}
+.card{
+ background:white;
+ padding:20px;
+ margin:15px 0;
+ border-radius:12px;
+ box-shadow:0 3px 12px #0000000b;
+}
+input{
+ width:100%;
+ padding:13px;
+ margin:8px 0;
+ border:1px solid #ccd5df;
+ border-radius:8px;
+}
+.task{
+ border:1px solid #e0e7ef;
+ padding:15px;
+ border-radius:10px;
+ margin:12px 0;
+}
+.small{color:#64748b;font-size:14px}
+.hidden{display:none}
+footer{text-align:center;padding:25px;color:#64748b}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Norex Earn BD</h1>
+<p>ছোট কাজ শিখুন, দক্ষতা বাড়ান</p>
+</header>
+
+<nav>
+<button onclick="showPage('home')">হোম</button>
+<button onclick="showPage('tasks')">কাজ</button>
+<button onclick="showPage('login')">লগইন</button>
+<button onclick="showPage('register')">রেজিস্ট্রেশন</button>
+<button onclick="showPage('dashboard')">ড্যাশবোর্ড</button>
+</nav>
+
+<main>
+
+<section id="home">
+<div class="hero">
+<h2>স্বাগতম Norex Earn BD-তে!</h2>
+<p>অনলাইনে দক্ষতা অর্জন করুন এবং কাজের সুযোগ খুঁজুন।</p>
+<button onclick="showPage('register')">অ্যাকাউন্ট খুলুন</button>
+</div>
+
+<div class="card">
+<h3>আমাদের সুবিধা</h3>
+<p>📋 বিভিন্ন ছোট কাজের তালিকা</p>
+<p>👤 ব্যক্তিগত ড্যাশবোর্ড</p>
+<p>📊 কাজের অগ্রগতি দেখার সুবিধা</p>
+<p class="small">আয়ের নিশ্চয়তা নেই। কাজ ও পুরস্কার চালু হওয়ার আগে প্রশাসকের যাচাই প্রয়োজন।</p>
+</div>
+</section>
+
+<section id="register" class="hidden">
+<div class="card">
+<h2>নতুন অ্যাকাউন্ট</h2>
+<form onsubmit="registerDemo(event)">
+<input id="name" placeholder="তোমার নাম" required>
+<input id="email" type="email" placeholder="ইমেইল" required>
+<input id="password" type="password" placeholder="পাসওয়ার্ড" minlength="8" required>
+<button type="submit">রেজিস্ট্রেশন</button>
+</form>
+<p id="registerMessage" class="small"></p>
+</div>
+</section>
+
+<section id="login" class="hidden">
+<div class="card">
+<h2>লগইন</h2>
+<p>আসল লগইন চালু করতে Supabase Authentication যুক্ত করতে হবে।</p>
+<input type="email" placeholder="ইমেইল">
+<input type="password" placeholder="পাসওয়ার্ড">
+<button onclick="alert('পরবর্তী ধাপে Supabase লগইন যুক্ত করা হবে।')">লগইন</button>
+</div>
+</section>
+
+<section id="tasks" class="hidden">
+<div class="card">
+<h2>কাজের তালিকা</h2>
+
+<div class="task">
+<h3>ডিজিটাল নিরাপত্তা শেখা</h3>
+<p>অনলাইন নিরাপত্তা সম্পর্কে একটি ছোট শিক্ষামূলক লেখা পড়ুন।</p>
+<button onclick="alert('এই ডেমো কাজে এখনো কোনো আর্থিক পুরস্কার নেই।')">কাজ দেখুন</button>
+</div>
+
+<div class="task">
+<h3>সোশ্যাল মিডিয়া বিষয়ক কুইজ</h3>
+<p>সোশ্যাল মিডিয়া ব্যবহারের নিয়ম সম্পর্কে জানুন।</p>
+<button onclick="alert('এই ডেমো কাজে এখনো কোনো আর্থিক পুরস্কার নেই।')">কাজ দেখুন</button>
+</div>
+
+<p class="small">এগুলো ডেমো কাজ। বাস্তব কাজ ও পুরস্কারের ব্যবস্থা এখনো চালু হয়নি।</p>
+</div>
+</section>
+
+<section id="dashboard" class="hidden">
+<div class="card">
+<h2>আমার ড্যাশবোর্ড</h2>
+<p id="welcome">স্বাগতম!</p>
+<p>অনুমোদিত আয়: ৳০.০০</p>
+<p class="small">এটি প্রাথমিক ডেমো। বাস্তব ব্যালেন্সের জন্য নিরাপদ ডেটাবেস ও সার্ভার দরকার।</p>
+</div>
+</section>
+
+</main>
+
+<footer>
+<p>© 2026 Norex Earn BD</p>
+<p>নিরাপদ ও দায়িত্বশীল অনলাইন কাজের প্ল্যাটফর্ম</p>
+</footer>
+
+<script>
+function showPage(id){
+ document.querySelectorAll('main section').forEach(
+  section=>section.classList.add('hidden')
+ );
+ document.getElementById(id).classList.remove('hidden');
+ window.scrollTo(0,0);
+}
+
+function registerDemo(event){
+ event.preventDefault();
+ const name=document.getElementById('name').value;
+ document.getElementById('registerMessage').textContent=
+  'ধন্যবাদ '+name+'! এটি শুধু ডেমো ফর্ম। বাস্তব অ্যাকাউন্ট তৈরির জন্য Supabase সংযুক্ত করতে হবে।';
+}
+</script>
+
+</body>
+  </html>
